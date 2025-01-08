@@ -1,0 +1,33 @@
+# CIP-0042: Stable Price per Canton Coin Transfer via Synchronizer Fees
+
+## Motivation
+
+Simpler pricing of synchronizer fees as we drive down transaction costs.
+
+Digital Asset recently reduced the size of a typical Canton transaction payload by 32%. We anticipate that Digital Asset and other contributors to Canton and Splice will continue to reduce the real cost of operating Super Validator nodes and the Global Synchronizer. Where feasible, it seems wise to maintain prices while our costs go down.
+
+This CIP proposes that we allow the Super Validator operators to adjust the synchronizer fee as needed to maintain a fee level of $1 for typical asset transfers, using Canton Coin transfers as the reference. We propose that the Super Validator rights owners allow the Super Validator operators to continue to adjust the fees on an ongoing basis to maintain this $1 typical fee, without explicit approval from the Super Validator rights owners for each change required to maintain this level.
+
+## Background
+
+Super Validators maintain a traffic balance in the name of the operator party for each Validator node and draw down this traffic balance each time the Validator distributes and confirms a message via the synchronizer nodes operated by the Super Validators.
+
+These traffic balances are formed by burning Canton Coin, either by the operator party of a given Validator node or by another operator party acting on its behalf. This burn is called the “synchronizer fee.”
+
+Synchronizer fees may be burned, and traffic balances formed, either directly or indirectly. In a direct burn of synchronizer fees, an operator party burns Canton Coin on its own behalf, and Super Validators respond by creating a corresponding traffic balance. In an indirect synchronizer fee burn, an operator party burns Canton Coin on behalf of a second operator party.
+
+At MainNet launch, the Super Validator rights owners voted to require a synchronizer fee burn equivalent to $1, in exchange for enough traffic to perform a full Canton Coin transfer. At the time of launch, a Canton Coin transfer carried a payload of approximately 60 kB.
+
+This rate of $1 for 60 kB is equivalent to a price of $16.67 for 1 MB, so this became the listed Synchronizer fee at launch.
+
+However, Canton 3.1 introduced a more efficient data representation for transactions. This decreased the size of typical transactions by approximately 32%. To maintain a synchronizer fee burn of $1 for a typical asset transfer via the Global Synchronizer, we need to increase the synchronizer fee by approximately 50%, to roughly $25 USD per MB.
+
+![alt_text](/images/cip-0042.png "cip-0042")  
+*Chart of average transaction size for non-SV Validator nodes on TestNet, before and after adoption of Canton 3.1. A large percentage of this transaction activity involves Canton Coin transfers.*
+
+
+## Actions
+
+If this CIP is approved, the Super Validator operators will implement a change to the Splice code running on their nodes to return the cost of typical asset transfers to $1. They will continue to adjust synchronizer fees as needed to maintain this $1 level unless a CIP specifies lowering the $1 target.
+
+The Super Validators will also be authorized to introduce tooling that allows them to rapidly and dynamically adjust the synchronizer fee to maintain this $1 level, whether in response to a change in typical transaction sizes or the conversion rate of Canton Coin to USD.
