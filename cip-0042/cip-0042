@@ -22,7 +22,7 @@ This rate of $1 for 60 kB is equivalent to a price of $16.67 for 1 MB, so this b
 
 However, Canton 3.1 introduced a more efficient data representation for transactions. This decreased the size of typical transactions by approximately 32%. To maintain a synchronizer fee burn of $1 for a typical asset transfer via the Global Synchronizer, we need to increase the synchronizer fee by approximately 50%, to roughly $25 USD per MB.
 
-![alt_text](/images/cip-0042.png "cip-0042")  
+![alt_text](cip-0042.png "cip-0042")  
 *Chart of average transaction size for non-SV Validator nodes on TestNet, before and after adoption of Canton 3.1. A large percentage of this transaction activity involves Canton Coin transfers.*
 
 
