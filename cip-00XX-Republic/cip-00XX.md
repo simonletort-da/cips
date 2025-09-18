@@ -22,14 +22,13 @@
 * Republic is backed by Morgan Stanley, Galaxy, AngelList, Valor Equity, and other leading institutions.
 
 ## Deliverables for full SV Reward:
-| Deliverable | Acceptance Criteria | Deadline | Weight Earned |
-|-------------|---------------------|----------|---------------|
-|     X       |         X           |   X days |     X.X       |
-|     X       |         X           |   X days |     X.X       |
 
+| Deliverable                                       | Acceptance Criteria                                                                                                                                                                                                                                                                                                                                                                                                        | Deadline                    | Weight Earned |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------------- |
+| Republic Wallet support for Canton Token Standard | • Republic Wallet integration: Enable Canton in a fully regulated retail wallet by integrating Canton Network Token Standard into Republic’s wallet. <br> • Republic Wallet key features: customizable, API-enabled wallet and validator platform that supports security and utility tokens, with secure key management, recovery, real‑time transactions, automated fees, and continuous updates for reliable performance | +180 days from CIP approval | 1             |
 
+## SV Reward Mechanics:
 
-## SV Reward Mechanics: 
 * An `extraBeneficiary` PartyID associated with the ‘escrowed’ Super Validator will be setup by the GSF with an SV Weight at the maximum earnable weight in the CIP that granted rights to that Super Validator.
     * The Applicant is responsible for all costs associated with the operation of the escrow SV
     * The escrow SV will NOT mint rewards on a block by block basis
@@ -54,4 +53,4 @@
 
 ## Changelog
 
-* **DATE:** Initial draft of the proposal.
+* **2025-09-18:** Initial draft of the proposal.
